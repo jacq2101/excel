@@ -1,5 +1,8 @@
 La fórmula siguiente identifica la primera venta de un vendedor en una tabla:
 `=SI(P17=0,0,SI(CONTAR.SI.CONJUNTO($O$17:O17,$O17,$P$17:P17,">1")=1,1,0))`
+                                  ☝🏻O es el rango Clientes
+                                    P son Ventas 
+                                    Cuado jalas la formula va moviendo el rango y puede ver si ya estaba arriba.
 
 En la tabla resultante, la columna `PRIMER_VENTA` indica si la venta es la primera del vendedor:
 | FECHA      | CLIENTE | VENTAS    | PRIMER_VENTA |
