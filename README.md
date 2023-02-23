@@ -1,6 +1,6 @@
 # 🎉 Bienvenido al emocionante mundo de las fórmulas y sintaxis de Excel! 🎉
 
-👨‍💻 Aquí en este archivo, encontrarás todo lo que necesitas saber sobre fórmulas y sintaxis de Excel, desde lo básico como sumas y restas, hasta fórmulas más avanzadas como condicionales y funciones de búsqueda. 
+👨‍💻 Aquí en este archivo, encontrarás todo lo que necesitas saber sobre fórmulas y sintaxis de Excel, desde lo básico como sumas y restas, hasta fórmulas más avanzadas. 
 
 💻 Nuestra colección de fórmulas es fácil de usar y está diseñada para ayudarte a resolver problemas comunes de Excel de manera rápida y sencilla. Además, proporcionamos ejemplos prácticos de cómo aplicar estas fórmulas en situaciones reales, para que puedas verlas en acción.
 
