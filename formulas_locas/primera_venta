@@ -1,0 +1,19 @@
+La fórmula siguiente identifica la primera venta de un vendedor en una tabla:
+`=SI(P17=0,0,SI(CONTAR.SI.CONJUNTO($O$17:O17,$O17,$P$17:P17,">1")=1,1,0))`
+
+En la tabla resultante, la columna `PRIMER_VENTA` indica si la venta es la primera del vendedor:
+| FECHA      | CLIENTE | VENTAS    | PRIMER_VENTA |
+|------------|---------|------------|--------------|
+| 01/01/2023 | ID1     | $-         | 0            |
+| 01/01/2023 | ID2     | $200.00    | 1            |
+| 01/01/2023 | ID3     | $-         | 0            |
+| 01/01/2023 | ID4     | $-         | 0            |
+| 05/02/2023 | ID1     | $200.00    | 1            |
+| 05/02/2023 | ID2     | $100.00    | 0            |
+| 05/02/2023 | ID3     | $-         | 0            |
+| 05/02/2023 | ID4     | $-         | 0            |
+| 03/03/2023 | ID1     | $300.00    | 0            |
+| 03/03/2023 | ID2     | $120.00    | 0            |
+| 03/03/2023 | ID3     | $20.00     | 1            |
+| 03/03/2023 | ID4     | $-         | 0            |
+
