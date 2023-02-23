@@ -4,16 +4,16 @@ La fórmula siguiente identifica la primera venta de un vendedor en una tabla:
 En la tabla resultante, la columna `PRIMER_VENTA` indica si la venta es la primera del vendedor:
 | FECHA      | CLIENTE | VENTAS    | PRIMER_VENTA |
 |------------|---------|------------|--------------|
-| 01/01/2023 | ID1     | $-         | 0            |
+| 01/01/2023 | ID1     | $0         | 0            |
 | 01/01/2023 | ID2     | $200.00    | 1            |
-| 01/01/2023 | ID3     | $-         | 0            |
-| 01/01/2023 | ID4     | $-         | 0            |
+| 01/01/2023 | ID3     | $0         | 0            |
+| 01/01/2023 | ID4     | $0         | 0            |
 | 05/02/2023 | ID1     | $200.00    | 1            |
 | 05/02/2023 | ID2     | $100.00    | 0            |
-| 05/02/2023 | ID3     | $-         | 0            |
-| 05/02/2023 | ID4     | $-         | 0            |
+| 05/02/2023 | ID3     | $0         | 0            |
+| 05/02/2023 | ID4     | $0         | 0            |
 | 03/03/2023 | ID1     | $300.00    | 0            |
 | 03/03/2023 | ID2     | $120.00    | 0            |
 | 03/03/2023 | ID3     | $20.00     | 1            |
-| 03/03/2023 | ID4     | $-         | 0            |
+| 03/03/2023 | ID4     | $0         | 0            |
 
