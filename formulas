@@ -1,3 +1,45 @@
 En un rango de la tabla ver las fechas que estan entre un inicio y un fin , y si estan dentro de ese rango es 1, sino es 0
 
+====================================================
+====================================================
+EXCEL
 =SI(Y([@[Date Active]]>=FECHA(2023,1,1),[@[Date Active]]<=FECHA(2023,12,31)),1,0)
+
+
+====================================================
+====================================================
+
+SQL
+Por ejemplo, si tienes una tabla llamada "ejemplo" con una columna "Date Active", puedes utilizar la siguiente consulta para crear una nueva columna llamada "Active Range" que contenga 1 si la fecha de "Date Active" está dentro del rango del 1 de enero de 2023 al 31 de diciembre de 2023, y 0 en caso contrario:
+SELECT
+    *,
+    CASE
+        WHEN [Date Active] >= '2023-01-01' AND [Date Active] <= '2023-12-31' THEN 1
+        ELSE 0
+    END AS [Active Range]
+FROM
+    ejemplo;
+
+En esta consulta, utilizamos la cláusula CASE para aplicar una condición a cada fila de la tabla. Si la fecha de "Date Active" está dentro del rango del 1 de enero de 2023 al 31 de diciembre de 2023, se devuelve 1, de lo contrario se devuelve 0. La función >= significa "mayor o igual a" y <= significa "menor o igual a", de modo que se verifica si la fecha está dentro del rango especificado. La consulta devuelve todas las columnas de la tabla "ejemplo" más la nueva columna "Active Range".
+
+====================================================
+====================================================
+
+Python
+import pandas as pd
+
+# Carga los datos desde un archivo CSV en un dataframe
+df = pd.read_csv('nombre_del_archivo.csv')
+
+# Define una función para aplicar a cada fila del dataframe
+def date_active_range(row):
+    if row['Date Active'] >= '2023-01-01' and row['Date Active'] <= '2023-12-31':
+        return 1
+    else:
+        return 0
+
+# Aplica la función a cada fila del dataframe y crea una nueva columna
+df['Active Range'] = df.apply(date_active_range, axis=1)
+
+# Guarda el dataframe actualizado en un archivo CSV
+df.to_csv('nombre_del_archivo_actualizado.csv', index=False)
