@@ -1,0 +1,3 @@
+En un rango de la tabla ver las fechas que estan entre un inicio y un fin , y si estan dentro de ese rango es 1, sino es 0
+
+=SI(Y([@[Date Active]]>=FECHA(2023,1,1),[@[Date Active]]<=FECHA(2023,12,31)),1,0)
