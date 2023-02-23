@@ -14,4 +14,4 @@
 👍 ¡Nos encanta ayudarte a dominar las fórmulas y sintaxis de Excel! 
 
 
-<h3 align="center"><img src="https://media.giphy.com/media/cckwsedtCddKg/giphy.gif" alt="I💚Excel" width="150" height="150" style="display:block;margin:auto;"><p>I💚Excel</p></h3>
+<h3 align="center"><img src="https://media.giphy.com/media/l0HlN5Y28D9MzzcRy/giphy.gif" alt="I💚Excel" width="150" height="150" style="display:block;margin:auto;"><p>I💚Excel</p></h3>
