@@ -20,3 +20,61 @@ En la tabla resultante, la columna `PRIMER_VENTA` indica si la venta es la prime
 | 03/03/2023 | ID3     | $20.00     | 1            |
 | 03/03/2023 | ID4     | $0         | 0            |
 
+
+
+👉🏻PowerQuery:
+
+Agregar una columna Personalizada
+
+
+= Table.AddColumn(#"Tipo cambiado", "Primera venta del cliente", each
+    let
+      clienteActual = [CLIENTE],
+      fechaActual = [FECHA],
+      tablaFiltrada = Table.SelectRows(#"Tipo cambiado", each [CLIENTE] = clienteActual),
+      primeraVenta = List.Min(tablaFiltrada[FECHA]),
+      resultado = if fechaActual = primeraVenta then 1 else 0
+    in
+resultado
+)
+
+La función "Table.AddColumn" agrega una nueva columna a la tabla "#" (la tabla resultante de la última transformación).
+El segundo argumento de "Table.AddColumn" es el nombre de la nueva columna ("Primera venta del cliente").
+El tercer argumento de "Table.AddColumn" es la expresión a aplicar a cada fila de la tabla para llenar la nueva columna. En este caso, estamos usando la función "each" para referirnos a cada fila de la tabla.
+El contenido de la función "each" está en la estructura "let...in", que se utiliza para definir variables y luego retornar el resultado final. En este caso, la variable "clienteActual" se refiere al valor de la columna "CLIENTE" de la fila actual, y la variable "fechaActual" se refiere al valor de la columna "FECHA" de la fila actual.
+La variable "tablaFiltrada" se crea mediante la función "Table.SelectRows", que filtra la tabla "#Tipo cambiado" para que solo incluya las filas donde el valor de la columna "CLIENTE" es igual al valor de la variable "clienteActual".
+La variable "primeraVenta" se define utilizando la función "List.Min", que devuelve el valor mínimo de una lista. En este caso, la lista que estamos pasando a la función es la columna "FECHA" de la variable "tablaFiltrada". Esto nos da la fecha de la primera venta del cliente.
+Por último, la variable "resultado" se define utilizando una expresión condicional "if...then...else". Si la fecha actual es igual a la fecha de la primera venta, entonces el resultado es 1, de lo contrario es 0.
+La función "each" retorna el valor de la variable "resultado", que se asigna a la nueva columna "Primera venta del cliente".
+
+En Power Query, let e in son palabras clave que se utilizan para definir una expresión de consulta. La expresión let permite definir variables dentro de la consulta, que luego se pueden utilizar en otras partes de la consulta. La sintaxis básica de let es la siguiente:
+
+let
+    variable1 = expresion1,
+    variable2 = expresion2,
+    ...
+in
+    expresionFinal
+
+En este caso, variable1, variable2, etc. son los nombres de las variables que se están definiendo, y expresion1, expresion2, etc. son las expresiones que se están asignando a esas variables. Luego, la expresión final se define después de la palabra clave in.
+
+En resumen, let se utiliza para definir variables y expresiones en una consulta, mientras que in se utiliza para definir la expresión final que devuelve el resultado de la consulta.
+
+
+Estas dos líneas de código crean dos variables llamadas clienteActual y fechaActual.
+
+clienteActual es una variable que almacena el valor de la columna "CLIENTE" para cada fila del conjunto de datos. En cada iteración del loop, se actualiza con el valor de "CLIENTE" para la fila actual.
+
+fechaActual es similar a clienteActual en que también almacena el valor de una columna, en este caso, la columna "FECHA".
+
+Estas variables se utilizan en el resto de la fórmula para hacer comparaciones y realizar operaciones en función de los valores de las columnas. En el caso de esta fórmula específica, se utilizan para comparar la fecha actual con la primera fecha de venta del cliente en cuestión.
+
+Un loop, también conocido como bucle, es una estructura de control de flujo utilizada en programación para ejecutar repetidamente un conjunto de instrucciones mientras se cumple una determinada condición o hasta que se alcance un número determinado de iteraciones.
+
+Los loops son utilizados para automatizar tareas que necesitan ser repetidas varias veces, como la manipulación de datos en una base de datos, el procesamiento de imágenes, la generación de informes, entre otros.
+
+Los bucles pueden ser de diferentes tipos, como for, while, do-while, entre otros, y cada uno tiene su propia sintaxis y forma de funcionamiento.
+
+
+
+
